@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BIOCAD DevOps Test Task
 
 ## 📋 Описание
@@ -103,3 +104,7 @@ WHERE фильтрует строки до группировки (GROUP BY). HA
 ## 🔗 Ссылки
 - **Docker Hub:** https://hub.docker.com/r/rosimus/biocad_devops_test
 - **GitHub:** https://github.com/Rosimus/biocad-devops-test
+=======
+# biocad_devops_test
+DevOps test task: Hello World app on Docker + Kubernetes (Minikube)
+>>>>>>> 426515644ae6b74e068e7602514909a0d351c80a
