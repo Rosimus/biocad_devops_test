@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # BIOCAD DevOps Test Task
 
 ## 📋 Описание
@@ -11,45 +10,59 @@
 - **Оркестрация:** Kubernetes (Minikube)
 
 ## 📁 Структура проекта
+```
 biocad-devops-test/
-├── app.py # Flask-приложение (порт 32777)
-├── requirements.txt # Зависимости Python
-├── Dockerfile # Инструкция сборки образа
-├── deployment.yaml # Манифест Deployment (2 реплики)
-├── service.yaml # Манифест Service (NodePort)
-├── architecture.png # Схема архитектуры
-├── README.md # Описание проекта
+├── app.py                  # Flask-приложение (порт 32777)
+├── requirements.txt        # Зависимости Python
+├── Dockerfile              # Инструкция сборки образа
+├── deployment.yaml         # Манифест Deployment (2 реплики)
+├── service.yaml            # Манифест Service (NodePort)
+├── architecture.png        # Схема архитектуры
+├── README.md               # Описание проекта
 └── screenshots/
-├── pods.png # Скриншот с 2 запущенными подами
-├── svc.png # Скриншот сервиса NodePort
-└── browser.png # Скриншот приложения в браузере
+    ├── pods.png            # Скриншот с 2 запущенными подами
+    ├── svc.png             # Скриншот сервиса NodePort
+    └── browser.png         # Скриншот приложения в браузере
+```
 
 ## 🚀 Инструкция по запуску
 
 ### 1. Сборка Docker-образа
+```bash
 docker build -t rosimus/biocad_devops_test:latest .
+```
 
 ### 2. Публикация образа на Docker Hub
+```bash
 docker login
 docker push rosimus/biocad_devops_test:latest
+```
 
 ### 3. Запуск Minikube
+```bash
 minikube start --driver=docker
+```
 
 ### 4. Применение манифестов Kubernetes
+```bash
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
+```
 
 ### 5. Проверка статуса
+```bash
 kubectl get pods
 kubectl get svc
+```
 
 Ожидаемый результат:
 - 2 пода в статусе Running
 - Сервис типа NodePort с портом 30077
 
 ### 6. Проброс портов
+```bash
 kubectl port-forward service/hello-devops-service 32777:32777
+```
 
 ### 7. Проверка в браузере
 Откройте http://localhost:32777 — должно отобразиться "Hello, World!"
@@ -103,8 +116,4 @@ WHERE фильтрует строки до группировки (GROUP BY). HA
 
 ## 🔗 Ссылки
 - **Docker Hub:** https://hub.docker.com/r/rosimus/biocad_devops_test
-- **GitHub:** https://github.com/Rosimus/biocad-devops-test
-=======
-# biocad_devops_test
-DevOps test task: Hello World app on Docker + Kubernetes (Minikube)
->>>>>>> 426515644ae6b74e068e7602514909a0d351c80a
+- **GitHub:** https://github.com/Rosimus/biocad_devops_test
